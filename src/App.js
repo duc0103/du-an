@@ -47,6 +47,7 @@ const App = () => {
 
   const handleScan = async (scanData) => {
     console.log(`loaded data data`, scanData);
+    setPrecScan(scanData);
     if (scanData && scanData !== "" && !showDialog && !processing) {
       console.log(`loaded >>>`, scanData);
       setPrecScan(scanData);
