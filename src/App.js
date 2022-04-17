@@ -59,7 +59,7 @@ const App = () => {
   };
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
+      <h1>Hello alo</h1>
       <h2>
         Last Scan:{precScan}
         {selected}
