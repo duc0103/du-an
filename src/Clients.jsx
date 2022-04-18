@@ -4,7 +4,7 @@ import QrReader from "react-qr-reader";
 import axios from "axios";
 import { useEffect } from "react";
 
-const App = () => {
+const Clients = () => {
   const [code, setCode] = useState(null);
   const [showDialog, setDiaglog] = useState(false);
   const [processing, setProcessing] = useState(false);
@@ -172,4 +172,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Clients;
