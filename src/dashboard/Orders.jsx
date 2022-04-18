@@ -1,37 +1,41 @@
-import * as React from 'react';
-import Link from '@mui/material/Link';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Title from './Title';
-import { Card } from '@mui/material';
+import * as React from "react";
+import Link from "@mui/material/Link";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Title from "./Title";
+import { Card } from "@mui/material";
+import { getAll } from "../resources/rs.api";
 
 // Generate Order Data
-function createData(
-  id: number,
-  date: string,
-  name: string,
-  shipTo: string,
-  paymentMethod: string,
-  amount: string
-) {
+function createData(id, date, name, shipTo, paymentMethod, amount) {
   return { id, date, name, shipTo, paymentMethod, amount };
 }
 
 const rows = [
-  createData(0, '16 Mar, 2019', '1 +1 =?', '2', '2,5,6,7', 'Trắc nghiệm'),
-  createData(1, '16 Mar, 2019', '1 +1 =?', '2', '4,5,6,7', 'Trắc nghiệm'),
-  createData(2, '16 Mar, 2019', '1 +1 =?', '2', '2,5,6,7', 'Trắc nghiệm'),
-  createData(3, '16 Mar, 2019', '1 +1 =?', '2', '2,5,6,7', 'Trắc nghiệm'),
+  createData(0, "16 Mar, 2019", "1 +1 =?", "2", "2,5,6,7", "Trắc nghiệm"),
+  createData(1, "16 Mar, 2019", "1 +1 =?", "2", "4,5,6,7", "Trắc nghiệm"),
+  createData(2, "16 Mar, 2019", "1 +1 =?", "2", "2,5,6,7", "Trắc nghiệm"),
+  createData(3, "16 Mar, 2019", "1 +1 =?", "2", "2,5,6,7", "Trắc nghiệm"),
 ];
 
-function preventDefault(event: React.MouseEvent) {
+function preventDefault(event) {
   event.preventDefault();
 }
 
 export default function Orders() {
+  const fetchData = async () => {
+    try {
+      const res = await getAll();
+      console.log(res);
+    } catch (error) {}
+  };
+
+  React.useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <React.Fragment>
       <Card>

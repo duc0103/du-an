@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Clients from "./Clients";
+import Clients from "./Clients/Clients";
 import { Main } from "./modules/main";
 const App = () => {
   return (
