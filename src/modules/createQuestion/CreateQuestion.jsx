@@ -4,6 +4,7 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import AddIcon from "@mui/icons-material/Add";
+import LinkIcon from '@mui/icons-material/Link';
 import {
   Box,
   Button,
@@ -59,7 +60,7 @@ const CreateQuestion = () => {
                 <Typography variant="body2">Âm thanh</Typography>
               </Box>
               <Box>
-                <VideocamIcon style={{ marginLeft: 14 }} />
+                <LinkIcon style={{ marginLeft: 14 }} />
                 <Typography variant="body2">Video</Typography>
               </Box>
             </Card>
