@@ -12,7 +12,7 @@ const Clients = () => {
   const [questionIds, setQuestionIds] = useState(["8258"]);
   return (
     <>
-      <Box>{questionIds}</Box>
+      <Box>tiêu đề</Box>
       {openQRCode ? (
         <>
           <Box style={{ display: "flex", justifyContent: "end" }}>
