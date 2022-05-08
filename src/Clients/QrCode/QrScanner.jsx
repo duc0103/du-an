@@ -7,7 +7,7 @@ import CachedIcon from "@mui/icons-material/Cached";
 import { IconButton } from "@mui/material";
 
 const QrScaner = (props) => {
-  const { setQuestionId } = props;
+  const { questionIds, setQuestionIds } = props;
   const [code, setCode] = useState(null);
   const [showDialog, setDiaglog] = useState(false);
   const [processing, setProcessing] = useState(false);
@@ -15,13 +15,13 @@ const QrScaner = (props) => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const handleScan = async (scanData) => {
-    console.log(`loaded data data`, scanData);
-    setQuestionId(scanData);
     if (scanData && scanData !== "" && !showDialog && !processing) {
+      setDiaglog(false);
       console.log(`loaded >>>`, scanData);
-      setQuestionId(scanData);
+      setQuestionIds(...questionIds, scanData);
     }
   };
+
   const handleError = (err) => {
     console.error(err);
   };
