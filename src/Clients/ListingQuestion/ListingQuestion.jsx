@@ -22,7 +22,7 @@ const ListingQuestion = (props) => {
                       justifyContent: "center",
                       textAlign: "center",
                       height: 100,
-                      background: "#red",
+                      background: "#FF0000",
                     }}
                     onClick={handleClick}
                   >

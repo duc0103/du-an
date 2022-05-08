@@ -20,7 +20,11 @@ const Clients = () => {
               <CloseIcon />
             </IconButton>
           </Box>
-          <QrScaner questionIds={questionIds} setQuestionIds={setQuestionIds} />
+          <QrScaner
+            questionIds={questionIds}
+            setQuestionIds={setQuestionIds}
+            setOpenQrCode={setOpenQrCode}
+          />
         </>
       ) : (
         <ListingQuestion data={data} questionIds={questionIds} />
