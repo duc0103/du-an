@@ -4,7 +4,7 @@ export const data = {
     title: "Tham quan Bảo tàng lịch sử Việt Nam",
     destinations: [
       {
-        objectid: 8258,
+        objectid: "8258",
         name: "Phòng trưng bày số 1",
         question: "Đâu là cơ quan ngôn luận của Đông Dương Cộng sản đảng?",
         option1: "Báo Thanh niên",
@@ -15,7 +15,7 @@ export const data = {
         type: "question",
       },
       {
-        objectid: 8250,
+        objectid: "8250",
         name: "Phòng trưng bày số 1",
         question:
           "'Nước Việt Nam có quyền hưởng tự do và độc lập, và sự thật đã trở thành một nước tự do, độc lập' là nội dung của văn bản nào?",
@@ -27,7 +27,7 @@ export const data = {
         type: "question",
       },
       {
-        objectid: 8226,
+        objectid: "8226",
         name: "Phòng trưng bày số 2",
         question:
           "Ngày khai sinh ra nước Cộng hòa xã hội chủ nghĩa Việt Nam là?",
@@ -39,7 +39,7 @@ export const data = {
         type: "question",
       },
       {
-        objectid: 8282,
+        objectid: "8282",
         name: "Phòng trưng bày số 3",
         question: "Khi nào Việt Nam có gạo để xuất khẩu?",
         option1: "Năm 1989",

@@ -9,7 +9,7 @@ import { data } from "../Constants/Demo";
 
 const Clients = () => {
   const [openQRCode, setOpenQrCode] = useState(false);
-  const [questionIds, setQuestionIds] = useState([]);
+  const [questionIds, setQuestionIds] = useState(["8258"]);
   return (
     <>
       <Box>{questionIds}</Box>

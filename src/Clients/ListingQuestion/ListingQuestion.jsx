@@ -12,6 +12,7 @@ const ListingQuestion = (props) => {
         {!!data &&
           data.trealet.destinations.map((v, index) => {
             const checkScanner = questionIds.includes(v.objectid);
+            console.log(checkScanner);
             if (checkScanner) {
               return (
                 <Grid key={index} item xs={3}>
