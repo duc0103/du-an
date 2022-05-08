@@ -11,7 +11,7 @@ const ListingQuestion = (props) => {
       <Grid container spacing={2}>
         {!!data &&
           data.trealet.destinations.map((v, index) => {
-            const checkScanner = questionIds.includes(v?.id);
+            const checkScanner = questionIds.includes(v.objectid);
             if (checkScanner) {
               return (
                 <Grid key={index} item xs={3}>
