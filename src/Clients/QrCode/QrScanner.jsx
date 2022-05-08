@@ -18,7 +18,7 @@ const QrScaner = (props) => {
     if (scanData && scanData !== "" && !showDialog && !processing) {
       console.log(`loaded >>>`, scanData);
       await setQuestionIds([...questionIds, scanData]);
-      setDiaglog(true);
+      setOpenQrCode(false);
     }
   };
 
