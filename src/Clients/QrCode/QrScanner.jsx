@@ -16,9 +16,12 @@ const QrScaner = (props) => {
 
   const handleScan = async (scanData) => {
     if (scanData && scanData !== "" && !showDialog && !processing) {
-      setDiaglog(false);
       console.log(`loaded >>>`, scanData);
-      setQuestionIds(...questionIds, scanData);
+      await setQuestionIds([...questionIds, scanData]);
+      setCode(null);
+      setErrorMessage(null);
+      setDiaglog(false);
+      setProcessing(false);
     }
   };
 

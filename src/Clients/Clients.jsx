@@ -12,7 +12,7 @@ const Clients = () => {
   const [questionIds, setQuestionIds] = useState([]);
   return (
     <>
-      <Box>Đây là phần header</Box>
+      <Box>{questionIds}</Box>
       {openQRCode ? (
         <>
           <Box style={{ display: "flex", justifyContent: "end" }}>
