@@ -49,6 +49,30 @@ export const data = {
         key: "option1",
         type: "question",
       },
+      {
+        objectid: "36",
+        name: "Phòng trưng bày số 4",
+        question: "Nối cột : đâu là phép đáp án đúng",
+        option: {
+          option1: "1+1",
+          option2: "2+1",
+          option3: "3+3",
+          option4: "4+4",
+        },
+        key: {
+          key1: "2",
+          key2: "3",
+          key3: "8",
+          key4: "6",
+        },
+        type: "column",
+        connect: {
+          option1: "key1",
+          option2: "key2",
+          option3: "key4",
+          option4: "key3",
+        },
+      },
     ],
   },
 };
