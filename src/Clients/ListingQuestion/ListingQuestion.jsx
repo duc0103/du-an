@@ -1,11 +1,23 @@
-import { Card, Grid, IconButton } from "@mui/material";
-import LockIcon from "@mui/icons-material/Lock";
+import { Card, Dialog, Grid, IconButton } from '@mui/material';
+import LockIcon from '@mui/icons-material/Lock';
 
-import React from "react";
+import React, { useState } from 'react';
+import ResultQuestion from '../ResultQuestion/ResultQuestion';
 
 const ListingQuestion = (props) => {
   const { data, questionIds } = props;
-  const handleClick = () => {};
+  console.log(data);
+  const [open, setOpen] = useState(false);
+  const [questionActive, setQuestionActive] = useState();
+  const handleClick = (item) => {
+    setQuestionActive(item);
+    setOpen(true);
+  };
+  console.log(questionActive);
+  const onClose = () => {
+    setOpen(false);
+    setQuestionActive(null);
+  };
   return (
     <div>
       <Grid container spacing={2}>
@@ -18,63 +30,66 @@ const ListingQuestion = (props) => {
                 <Grid key={index} item xs={3}>
                   <Card
                     style={{
-                      display: "flex",
-                      justifyItems: "center",
-                      justifyContent: "center",
-                      textAlign: "center",
+                      display: 'flex',
+                      justifyItems: 'center',
+                      justifyContent: 'center',
+                      textAlign: 'center',
                       height: 100,
-                      background: "#FF0000",
+                      background: '#FF0000',
                     }}
-                    onClick={handleClick}
+                    onClick={() => handleClick(v)}
                   >
                     <IconButton>
                       <LockIcon
-                        style={{ width: 50, height: 50, fill: "white" }}
+                        style={{ width: 50, height: 50, fill: 'white' }}
                       />
                     </IconButton>
                   </Card>
                 </Grid>
               );
-            } else
+            } else {
               return (
                 <Grid key={index} item xs={3}>
                   <Card
                     style={{
-                      display: "flex",
-                      justifyItems: "center",
-                      justifyContent: "center",
-                      textAlign: "center",
+                      display: 'flex',
+                      justifyItems: 'center',
+                      justifyContent: 'center',
+                      textAlign: 'center',
                       height: 100,
-                      background: "#6c4298",
+                      background: '#6c4298',
                     }}
-                    onClick={handleClick}
                   >
                     <IconButton>
                       <LockIcon
-                        style={{ width: 50, height: 50, fill: "white" }}
+                        style={{ width: 50, height: 50, fill: 'white' }}
                       />
                     </IconButton>
                   </Card>
                 </Grid>
               );
+            }
           })}
         <Grid item xs={3}>
           <Card
             style={{
-              display: "flex",
-              justifyItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
+              display: 'flex',
+              justifyItems: 'center',
+              justifyContent: 'center',
+              textAlign: 'center',
               height: 100,
-              background: "#6c4298",
+              background: '#6c4298',
             }}
           >
             <IconButton>
-              <LockIcon style={{ width: 50, height: 50, fill: "white" }} />
+              <LockIcon style={{ width: 50, height: 50, fill: 'white' }} />
             </IconButton>
           </Card>
         </Grid>
       </Grid>
+      {open && (
+        <ResultQuestion open={open} onClose={onClose} data={questionActive} />
+      )}
     </div>
   );
 };
