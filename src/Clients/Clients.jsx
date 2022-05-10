@@ -11,13 +11,7 @@ import Count from "./Count";
 
 const Clients = () => {
   const [openQRCode, setOpenQrCode] = useState(false);
-  const [questionIds, setQuestionIds] = useState([
-    "8250",
-    "8258",
-    "8226",
-    "8282",
-    "36",
-  ]);
+  const [questionIds, setQuestionIds] = useState([]);
   return (
     <CountProvider>
       <>
