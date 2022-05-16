@@ -3,13 +3,18 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ClearIcon from "@mui/icons-material/Clear";
 import { Typography } from "@mui/material";
 import { pink } from "@mui/material/colors";
+// import Audio from "../../assets/audios/correct.mp3"
+import correct from "../../assets/audios/correct.mp3";
+import wrong from "../../assets/audios/wrong.mp3";
 
 const Effect = (props) => {
   const { status } = props;
-  const [audio] = useState(new Audio("./correct.mp3"));
-  // useEffect(() => {
-  //   audio.play();
-  // }, []);
+  const [audio] = useState(new Audio(status ? correct : wrong));
+  useEffect(() => {
+    // audio.play();
+    // const audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+    audio.play();
+  }, []);
   const audioClick = () => {
     audio.play();
   };
