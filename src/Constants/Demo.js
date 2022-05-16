@@ -66,7 +66,7 @@ export const data = {
           key4: "6",
         },
         type: "column",
-        connect: {
+        correct: {
           option1: "key1",
           option2: "key2",
           option3: "key4",

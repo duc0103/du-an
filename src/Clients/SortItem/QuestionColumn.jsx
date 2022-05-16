@@ -6,8 +6,8 @@ import { Card } from "@mui/material";
 const SortableItem = sortableElement(({ value }) => (
   <Card
     style={{
-      maxWidth: 150,
-      minWidth: 150,
+      zIndex: 999999,
+      minWidth: 180,
       height: 120,
       paddingTop: 20,
       marginTop: 10,
@@ -15,21 +15,16 @@ const SortableItem = sortableElement(({ value }) => (
       backgroundColor: "green",
     }}
   >
-    {value}
+    {value?.value}
   </Card>
 ));
 
 const SortableContainer = sortableContainer(({ children }) => {
-  return <div>{children}</div>;
+  return <div style={{ width: "100%" }}>{children}</div>;
 });
 
 const QuestionColumn = (props) => {
-  const { data } = props;
-  const [items, setItems] = useState(
-    Object.keys(data?.key).map((v) => {
-      return data?.key[`${v}`];
-    })
-  );
+  const { data, items, setItems } = props;
 
   const onSortEnd = ({ oldIndex, newIndex }) => {
     setItems(arrayMoveImmutable(items, oldIndex, newIndex));
@@ -37,12 +32,11 @@ const QuestionColumn = (props) => {
 
   return (
     <div style={{ display: "flex" }}>
-      <div>
+      <div style={{ width: "100%" }}>
         {Object.keys(data?.option).map((v) => (
           <Card
             style={{
-              maxWidth: 150,
-              minWidth: 150,
+              minWidth: 180,
               height: 120,
               paddingTop: 20,
               marginTop: 10,
@@ -55,9 +49,12 @@ const QuestionColumn = (props) => {
           </Card>
         ))}
       </div>
-      <SortableContainer onSortEnd={onSortEnd}>
+      <SortableContainer
+        onSortEnd={onSortEnd}
+        style={{ zIndex: 999999, width: "100%" }}
+      >
         {items.map((value, index) => (
-          <SortableItem key={`item-${value}`} index={index} value={value} />
+          <SortableItem key={`item-${value?.key}`} index={index} value={value} />
         ))}
       </SortableContainer>
     </div>
